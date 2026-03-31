@@ -20,9 +20,10 @@ router.post("/", async (req, res) => {
       password,
     });
     await newUSer.save();
-    return res
-      .status(201)
-      .send("User registered successfully and saved to Atlas!");
+    // return res
+    //   .status(201)
+    //   .send("User registered successfully and saved to Atlas!");
+    res.redirect("/login");
   } catch (error) {
     return res.status(500).send("Error saving user: " + error.message);
   }
